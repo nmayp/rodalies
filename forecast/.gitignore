@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/log.sqlite
+data/collect.log
+.pytest_cache/
+logdata/

@@ -1,0 +1,256 @@
+/* Plain black on white, blue for links and the things you can press. */
+
+:root {
+  --blue: #1840ff;
+  --grey: #555;
+  --faint: #8a8a8a;
+  --rule: #ececec;
+}
+
+html,
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 46em;
+  margin: 0 auto;
+  padding: 2.5em 1.2em 4em;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 0 0 0.3em;
+  font-size: 2em;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  margin: 0 0 0.6em;
+  font: 500 0.75em/1 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+section {
+  margin-top: 2.6em;
+}
+
+.intro {
+  margin: 0;
+  max-width: 34em;
+  color: var(--grey);
+}
+
+.see-more {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.lead {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  max-width: 15em;
+}
+
+.lead.small {
+  font-size: 1.2em;
+  line-height: 1.2;
+  max-width: 24em;
+}
+
+.note {
+  max-width: 46em;
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: var(--faint);
+}
+
+/* station pickers */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6em;
+}
+
+.sky-ctl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.sky-ctl label {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--grey);
+}
+
+input {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.15em 0;
+  border: 0;
+  border-bottom: 1.5px solid currentColor;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  outline: none;
+}
+
+input:focus-visible {
+  border-bottom-color: var(--blue);
+}
+
+.sky-pick {
+  list-style: none;
+  margin: 0.25em 0;
+  padding: 0;
+}
+
+.sky-pick li {
+  margin: 0.1em 0;
+}
+
+.sky-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1em 0.9em;
+  margin-top: 0.35em;
+}
+
+.sky-chips .see-more,
+.sky-pick .see-more,
+.sky-inline {
+  font-size: 1em;
+}
+
+.sky-chips .see-more[aria-pressed="false"] {
+  color: var(--grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sky-inline {
+  margin-left: 0.6em;
+}
+
+/* tables and lists */
+table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 2em 0.5em 0;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+  font-weight: 400;
+}
+
+tbody tr:last-child > * {
+  border-bottom: 1px solid var(--rule);
+}
+
+thead th {
+  border-top: 0;
+  padding-top: 0;
+  padding-bottom: 0.6em;
+  font: 500 0.7em/1 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+tbody th {
+  font-weight: 500;
+}
+
+ul.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+ul.plain li {
+  padding: 0.6em 0;
+  border-top: 1px solid var(--rule);
+}
+
+ul.plain li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tiles {
+  list-style: none;
+  margin: 0.4em 0 1.2em;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em 2em;
+  max-width: 44em;
+}
+
+.tiles .n {
+  display: block;
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.tiles .l {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 0.85em;
+  color: var(--faint);
+}
+
+/* the live map */
+.bench-chart svg {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+}
+
+.bench-chart.map svg {
+  height: 60vh !important;
+  max-height: 60vh;
+}
+
+@media (max-width: 640px) {
+  .pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .lead {
+    font-size: 1.7em;
+  }
+
+  .bench-chart.map svg {
+    height: 48vh !important;
+  }
+}

@@ -1,0 +1,6 @@
+gtfs-realtime-bindings
+numpy
+pandas
+requests
+scikit-learn
+pytest
